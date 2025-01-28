@@ -84,7 +84,9 @@ p {
   font-family: "Lato";
   color: white;
   font-size: 22px;
-  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    color 0.4s ease-in-out;
   text-transform: uppercase;
 }
 
@@ -92,7 +94,9 @@ p {
   font-family: "Lato";
   color: white;
   font-size: 18px;
-  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    color 0.4s ease-in-out;
 }
 
 .menu-item a:hover,
@@ -179,7 +183,9 @@ p {
   text-decoration: underline;
   padding: 5px;
   border-radius: 5px;
-  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    color 0.4s ease-in-out;
 }
 
 .see-more:hover {
@@ -210,7 +216,9 @@ p {
   overflow: hidden;
   background-color: #f4f4f4;
   height: 600px;
-  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.5), 0px 4px 6px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0px -4px 6px rgba(0, 0, 0, 0.5),
+    0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-container {
@@ -270,7 +278,9 @@ p {
   padding: 5px;
   border-radius: 5px;
   margin-left: auto;
-  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    color 0.4s ease-in-out;
 }
 
 .see-more-prog:hover {
@@ -380,7 +390,9 @@ p {
   margin-top: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
-  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    color 0.4s ease-in-out;
 }
 
 .see-more-galery:hover {
@@ -397,7 +409,9 @@ p {
 
 .google-maps {
   width: 100%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5), 0px -4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0px 4px 6px rgba(0, 0, 0, 0.5),
+    0px -4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .adress-container {
@@ -488,7 +502,9 @@ p {
   text-decoration: underline;
   padding: 5px;
   border-radius: 5px;
-  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    color 0.4s ease-in-out;
 }
 
 .a-propos-page-content a:hover {
@@ -526,7 +542,9 @@ p {
   text-decoration: underline;
   padding: 5px;
   border-radius: 5px;
-  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    color 0.4s ease-in-out;
 }
 
 .festi-map-dl-container a:hover {
@@ -586,7 +604,9 @@ p {
   text-decoration: underline;
   padding: 5px;
   border-radius: 5px;
-  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    color 0.4s ease-in-out;
 }
 
 .contact-content p a:hover {
@@ -629,7 +649,9 @@ p {
 .artists h2 span {
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -4px -4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    4px 4px 6px rgba(0, 0, 0, 0.2),
+    -4px -4px 6px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -638,14 +660,18 @@ p {
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -4px -4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    4px 4px 6px rgba(0, 0, 0, 0.2),
+    -4px -4px 6px rgba(0, 0, 0, 0.1);
   margin: 0 30px;
 }
 
 .artists p {
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -4px -4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    4px 4px 6px rgba(0, 0, 0, 0.2),
+    -4px -4px 6px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0 30px;
 }
@@ -683,7 +709,9 @@ p {
 .artisans-traders h2 span {
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -4px -4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    4px 4px 6px rgba(0, 0, 0, 0.2),
+    -4px -4px 6px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -698,7 +726,9 @@ p {
 .artisans-traders p {
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -4px -4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    4px 4px 6px rgba(0, 0, 0, 0.2),
+    -4px -4px 6px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0 30px;
 }
@@ -733,7 +763,9 @@ p {
   height: 180px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -4px -4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    4px 4px 6px rgba(0, 0, 0, 0.2),
+    -4px -4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease-in-out;
 }
 
@@ -770,7 +802,9 @@ p {
   height: 180px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -4px -4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    4px 4px 6px rgba(0, 0, 0, 0.2),
+    -4px -4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease-in-out;
 }
 
@@ -840,108 +874,75 @@ p {
   right: 20px;
 }
 
-/************************* POPUP *************************/
+/************************* BLOG *************************/
 
-.contact-popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.contact-popup.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.popup-wrapper {
-  background-image: linear-gradient(
-    to top,
-    rgba(248, 173, 26),
-    rgba(235, 99, 28)
-  );
-  border: 5px solid black;
-  outline: 5px solid #96c7d1;
-  outline-offset: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  width: 100%;
+.carousel-wrapper {
   position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
-.popup-head {
+.carousel-track {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+  transition: transform 0.5s ease-in-out;
 }
 
-.popup-img {
-  width: 200px;
-  height: 150px;
+.carousel-item {
+  flex: 0 0 100%;
+  height: 300px; /* Ajuste selon tes besoins */
+  background-size: cover;
+  background-position: center;
 }
 
-.popup-wrapper form {
-  display: flex;
-  flex-direction: column;
-  width: 265px;
-  margin: 0 auto;
-}
-
-.popup-wrapper form p {
-  padding-bottom: 10px;
-  text-align: center;
-  width: 100%;
-}
-
-.popup-wrapper form label {
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  font-family: "Manosque", serif;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.popup-wrapper form input {
-  height: 27px;
-}
-
-.popup-wrapper form input,
-textarea {
-  border: 1px solid black;
-  border-radius: 8px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: "Lato";
-}
-
-.popup-wrapper form .btn-form {
-  width: 100%;
-  font-family: "Manosque", serif;
-  font-size: 20px;
-  font-weight: 400;
-  border-radius: 4px;
-  background-color: black !important;
-  color: white !important;
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
   border: none;
+  cursor: pointer;
+  z-index: 10;
 }
 
-.popup-wrapper form .btn-form:hover {
-  background-color: white !important;
-  color: black !important;
+.carousel-arrow-left {
+  left: 10px;
+}
+
+.carousel-arrow-right {
+  right: 10px;
+}
+
+.carousel-arrow img {
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  position: absolute; /* Fixe leur position */
+  bottom: 10px; /* Les place en bas du carousel */
+  left: 50%; /* Centre horizontalement */
+  transform: translateX(-50%); /* Ajuste pour un centrage parfait */
+  z-index: 10; /* S'assure qu'elles soient visibles */
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #333;
 }
 
 /************************* FOOTER *************************/

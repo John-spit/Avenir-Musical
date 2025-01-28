@@ -1,107 +1,95 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /******** CAROUSEL ********/
-  const carouselWrapper = document.querySelector(".carousel-wrapper");
-  const carouselItems = document.querySelectorAll(".carousel-item");
-  const prevButton = document.querySelector(".carousel-prev");
-  const nextButton = document.querySelector(".carousel-next");
-  const bullets = document.querySelectorAll(".carousel-bullet");
+  /******* CAROUSEL ********/
+  const carousels = document.querySelectorAll(".carousel-wrapper");
+  carousels.forEach((carousel) => {
+    const track = carousel.querySelector(".carousel-track");
+    const items = Array.from(track.children);
+    const nextButton = carousel.querySelector(".carousel-arrow-right");
+    const prevButton = carousel.querySelector(".carousel-arrow-left");
+    const dotsNav = carousel.querySelector(".carousel-dots");
+    const dots = Array.from(dotsNav.children);
 
-  if (carouselWrapper && carouselItems.length > 0 && prevButton && nextButton) {
     let currentIndex = 0;
 
-    // Variables globales pour le swipe
-    let isDragging = false;
-    let startX = 0;
-    let currentTranslate = 0;
-
-    function updateCarousel() {
-      const offset = -currentIndex * 100;
-      carouselWrapper.style.transform = `translateX(${offset}%)`;
+    const updateCarousel = () => {
+      // Déplacer le track
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
       // Mettre à jour les bullets
-      bullets.forEach((bullet, index) => {
-        bullet.classList.toggle("active", index === currentIndex);
-      });
-    }
+      dots.forEach((dot) => dot.classList.remove("active"));
+      dots[currentIndex].classList.add("active");
+    };
+
+    // Gestion des flèches
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel();
+    });
 
     prevButton.addEventListener("click", () => {
-      currentIndex =
-        (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
       updateCarousel();
     });
 
-    nextButton.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % carouselItems.length;
-      updateCarousel();
-    });
-
-    // Ajouter des événements sur les bullets
-    bullets.forEach((bullet, index) => {
-      bullet.addEventListener("click", () => {
+    // Gestion des bullets
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
         currentIndex = index;
         updateCarousel();
       });
     });
 
-    // Swipe avec le doigt ou la souris
-    function touchStart(e) {
-      isDragging = true;
-      startX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
-      currentTranslate =
-        parseInt(
-          carouselWrapper.style.transform
-            .replace("translateX(", "")
-            .replace("%)", "")
-        ) || 0;
-      carouselWrapper.style.transition = "none"; // Désactiver la transition pendant le glissement
-    }
+    // Swipe avec le doigt
+    let startX,
+      isSwiping = false;
 
-    function touchMove(e) {
-      if (!isDragging) return;
-      const currentX =
-        e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
-      const deltaX = currentX - startX;
-      const translate =
-        currentTranslate + (deltaX / carouselWrapper.offsetWidth) * 100;
-      carouselWrapper.style.transform = `translateX(${translate}%)`;
-    }
+    // Événements pour la souris
+    track.addEventListener("mousedown", (e) => {
+      startX = e.pageX;
+      isSwiping = true;
+      e.preventDefault(); // Empêche le comportement par défaut
+    });
 
-    function touchEnd(e) {
-      if (!isDragging) return;
-      isDragging = false;
-      carouselWrapper.style.transition = "transform 0.4s ease";
-
-      const endX =
-        e.type === "touchend" ? e.changedTouches[0].clientX : e.clientX;
-      const deltaX = endX - startX;
-
-      if (deltaX > 50) {
-        // Swipe à droite (précédent)
-        currentIndex =
-          (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-      } else if (deltaX < -50) {
-        // Swipe à gauche (suivant)
-        currentIndex = (currentIndex + 1) % carouselItems.length;
+    track.addEventListener("mousemove", (e) => {
+      if (!isSwiping) return;
+      const moveX = e.pageX - startX;
+      e.preventDefault(); // Empêche le comportement par défaut
+      if (moveX > 50) {
+        prevButton.click();
+        isSwiping = false;
+      } else if (moveX < -50) {
+        nextButton.click();
+        isSwiping = false;
       }
+    });
 
-      updateCarousel();
-    }
+    // Événements pour le touch
+    track.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].pageX;
+      isSwiping = true;
+      e.preventDefault(); // Empêche le comportement par défaut
+    });
 
-    // Ajouter les événements pour le swipe
-    carouselWrapper.addEventListener("touchstart", touchStart);
-    carouselWrapper.addEventListener("touchmove", touchMove);
-    carouselWrapper.addEventListener("touchend", touchEnd);
+    track.addEventListener("touchmove", (e) => {
+      if (!isSwiping) return;
+      const moveX = e.touches[0].pageX - startX;
+      e.preventDefault(); // Empêche le comportement par défaut
+      if (moveX > 50) {
+        prevButton.click();
+        isSwiping = false;
+      } else if (moveX < -50) {
+        nextButton.click();
+        isSwiping = false;
+      }
+    });
 
-    carouselWrapper.addEventListener("mousedown", touchStart);
-    carouselWrapper.addEventListener("mousemove", touchMove);
-    carouselWrapper.addEventListener("mouseup", touchEnd);
-
-    // Empêcher le comportement par défaut lors du drag avec la souris
-    carouselWrapper.addEventListener("mouseleave", touchEnd);
+    track.addEventListener("touchend", () => {
+      isSwiping = false;
+    });
 
     // Initialisation
-    updateCarousel();
-  }
+    dots[0].classList.add("active");
+  });
 
   /******** MENU BURGER ********/
 

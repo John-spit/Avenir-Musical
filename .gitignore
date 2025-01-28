@@ -1,0 +1,19 @@
+# Ignorer tout sauf le dossier du thème enfant
+/*
+!.gitignore
+!app/
+app/*
+!app/public/
+app/public/*
+!app/public/wp-content/
+app/public/wp-content/*
+!app/public/wp-content/themes/
+app/public/wp-content/themes/*
+!app/public/wp-content/themes/avenir_musical/
+
+# Ignorer le dossier node_modules
+node_modules/
+
+# Ignorer les fichiers package.json et package-lock.json
+package.json
+package-lock.json

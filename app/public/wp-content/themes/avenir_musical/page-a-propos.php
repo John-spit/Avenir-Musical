@@ -1,5 +1,4 @@
 <?php
-
 get_header();
 ?>
 
@@ -9,8 +8,7 @@ get_header();
           // Arguments de la requête personnalisée
           $args = array(
               'post_type' => 'qui_sommes_nous',
-              'posts_per_page' => 1,
-              
+              'posts_per_page' => 1,      
           );
 
           // Créer une nouvelle requête
@@ -135,6 +133,5 @@ get_header();
 </section>
 
 <?php
-
 get_footer();
 ?>
