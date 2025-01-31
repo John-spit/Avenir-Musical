@@ -4,6 +4,7 @@ get_header();
 
 <section class="majo-who-section">
   <h2>- Majorettes -</h2>
+  <div class="majo-who-container">
   <?php
           // Arguments de la requête personnalisée
           $args = array(
@@ -25,13 +26,15 @@ get_header();
                 </p>
                 <p class="para">
                   <?php the_field('para_majo3') ?>
-                </p>                               
+                </p>
+                <img class="photo-majo" src="<?php the_field('photo_majo'); ?>" alt="<?php the_title(); ?>">                               
               <?php endwhile;
               wp_reset_postdata(); // Réinitialiser les données globales de publication
           else :
               echo '<p>Aucun paragraphe trouvé.</p>';
           endif;
           ?>
+  </div>        
 </section>
 
 <section class="majo-info-section">
@@ -48,6 +51,7 @@ get_header();
           // Vérifier si des publications existent
           if ($query->have_posts()) :
               while ($query->have_posts()) : $query->the_post(); ?>
+                <h3>Direction</h3>
                 <p class="para">
                   <?php the_field('nom_directeur_majo') ?>
                 </p>

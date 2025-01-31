@@ -2,14 +2,14 @@
 get_header();
 ?>
 
-<section id="my-blog">
+<section class="my-blog-section" id="my-blog">
     <h2>- Blog -</h2>
-    <div class="blog-container">
+    <div class="my-blog-container">
         <?php
         // Arguments de la requête personnalisée
         $args = array(
             'post_type'      => 'page_blog', // Type de post personnalisé
-            'posts_per_page' => 10,         // Nombre de publications par page
+            'posts_per_page' => 1,         // Nombre de publications par page
             'paged'          => get_query_var('paged') ? get_query_var('paged') : 1 // Gestion de la pagination
         );
 
@@ -24,7 +24,7 @@ get_header();
                 $groupe = get_field('photos_de_larticle'); // Le groupe de champs ACF
                 $image = $groupe['photo_a_la_une']; // Sous-champ : URL de l'image
         ?>
-        <div class="article">
+        <div class="article-item">
             <a href="<?php the_permalink(); ?>">
                 <?php if ($image) : ?>
                     <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($titre); ?>">
