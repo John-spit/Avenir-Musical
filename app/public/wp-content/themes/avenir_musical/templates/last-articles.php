@@ -1,5 +1,5 @@
 <section class="last-articles-section">
-    <h2>- Derniers Articles -</h2>
+    <h2>- Derniers Articles - <span class="none">Avenir Musical</span></h2>
     <div class="last-articles-container">
       <?php
       // Arguments de la requête pour récupérer les 3 derniers articles

@@ -1,6 +1,6 @@
 <section class="next-events-section">
-  <div class="next-events-container">
-      <h2>- Prochains événements -</h2>
+  <h2>- Prochains événements -</h2>
+  <div class="next-events-container">   
       <?php
               // Arguments de la requête personnalisée
               $args = array(

@@ -9,7 +9,7 @@ get_header();
         // Arguments de la requête personnalisée
         $args = array(
             'post_type'      => 'page_blog', // Type de post personnalisé
-            'posts_per_page' => 1,         // Nombre de publications par page
+            'posts_per_page' => 12,         // Nombre de publications par page
             'paged'          => get_query_var('paged') ? get_query_var('paged') : 1 // Gestion de la pagination
         );
 
@@ -35,7 +35,7 @@ get_header();
                   $presentation = get_field('texte_article1');
                   echo mb_substr($presentation, 0, 150) . '...'; // Limite à 150 caractères
                   ?>
-                <?php the_field('texte_article1') ?>
+                
                 </p>
             </a>
         </div>

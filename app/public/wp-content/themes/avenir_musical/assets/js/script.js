@@ -93,11 +93,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /******** MENU BURGER ********/
 
-  const burgerMenu = document.getElementById("burgerMenu");
-  const navMenu = document.getElementById("navMenu");
+  const burger = document.getElementById("burgerMenu");
+  const navContainer = document.querySelector(".nav-container");
 
-  burgerMenu.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
+  burger.addEventListener("click", function () {
+    burger.classList.toggle("open");
+    navContainer.classList.toggle("open");
+  });
+
+  // Fermer le menu en cliquant sur un lien
+  document.querySelectorAll(".nav-menu1 a, .nav-menu2 a").forEach((link) => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("open");
+      navContainer.classList.remove("open");
+    });
   });
 
   /******* SCROLL FLUIDE ********/
@@ -119,80 +128,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
-  });
-
-  /******** LIGHTBOX ********/
-
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const lightboxVideo = document.getElementById("lightbox-video");
-  const close = document.querySelector(".close");
-  const prev = document.getElementById("prev");
-  const next = document.getElementById("next");
-
-  // Vérifier si les éléments nécessaires existent
-  const items = document.querySelectorAll(".photos-galery, .video-galery");
-  if (items.length === 0 || !lightbox || !close || !prev || !next) {
-    return; // Arrête l'exécution si les éléments n'existent pas
-  }
-
-  let currentIndex = 0;
-
-  // Show the lightbox
-  const openLightbox = (index) => {
-    currentIndex = index;
-    const item = items[currentIndex];
-    if (item.tagName === "IMG") {
-      lightboxImg.src = item.src;
-      lightboxImg.style.display = "block";
-      lightboxVideo.style.display = "none";
-    } else if (item.tagName === "VIDEO") {
-      lightboxVideo.src = item.src;
-      lightboxVideo.style.display = "block";
-      lightboxImg.style.display = "none";
-    }
-    lightbox.style.display = "flex";
-  };
-
-  // Close the lightbox
-  const closeLightbox = () => {
-    lightbox.style.display = "none";
-    lightboxImg.src = "";
-    lightboxVideo.src = "";
-  };
-
-  // Navigate to previous
-  const showPrev = () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    openLightbox(currentIndex);
-  };
-
-  // Navigate to next
-  const showNext = () => {
-    currentIndex = (currentIndex + 1) % items.length;
-    openLightbox(currentIndex);
-  };
-
-  // Attach event listeners
-  items.forEach((item, index) => {
-    item.addEventListener("click", () => openLightbox(index));
-  });
-
-  close.addEventListener("click", closeLightbox);
-  prev.addEventListener("click", showPrev);
-  next.addEventListener("click", showNext);
-
-  // Close on overlay click
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  // Keyboard navigation
-  document.addEventListener("keydown", (e) => {
-    if (lightbox.style.display === "flex") {
-      if (e.key === "ArrowLeft") showPrev();
-      if (e.key === "ArrowRight") showNext();
-      if (e.key === "Escape") closeLightbox();
-    }
   });
 });
