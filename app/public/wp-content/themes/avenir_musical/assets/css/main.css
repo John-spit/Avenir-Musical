@@ -84,19 +84,18 @@ p {
 }
 
 .nav-menu1 .menu-item a {
-  font-family: "Lato";
+  font-family: "Lilita one";
   color: white;
   font-size: 40px;
   transition:
     transform 0.4s ease-in-out,
     color 0.4s ease-in-out;
-  font-weight: 700;
 }
 
 .nav-menu2 .menu-item a {
-  font-family: "Tangerine";
+  font-family: "Lilita one";
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   transition:
     transform 0.4s ease-in-out,
     color 0.4s ease-in-out;
@@ -730,7 +729,8 @@ footer {
 }
 
 .facebook-logo,
-.instagram-logo {
+.instagram-logo,
+.youtube-logo {
   width: 60px;
   height: 60px;
   border: 1px solid black;
@@ -740,7 +740,8 @@ footer {
 }
 
 .facebook-logo:hover,
-.instagram-logo:hover {
+.instagram-logo:hover,
+.youtube-logo:hover {
   transform: scale(1.2);
 }
 
