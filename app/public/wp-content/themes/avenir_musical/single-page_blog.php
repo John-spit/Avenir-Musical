@@ -17,6 +17,12 @@ get_header();
                 $image2 = $groupe['photo_2']; // Sous-champ : Deuxième image
                 $image3 = $groupe['photo_3']; // Sous-champ : Troisième image
                 $image4 = $groupe['photo_4'];
+                $image5 = $groupe['photo_5'];
+                $image6 = $groupe['photo_6'];
+                $image7 = $groupe['photo_7'];
+                $image8 = $groupe['photo_8'];
+                $image9 = $groupe['photo_9'];
+                $image10 = $groupe['photo_10'];
         ?>
         <div class="article">               
             <h3><?php the_field('titre_de_larticle') ?></h3>
@@ -45,6 +51,36 @@ get_header();
                 <img src="<?php echo esc_url($image4); ?>" alt="Image 4">
             </div>
         <?php endif; ?>
+        <?php if ($image5) : ?>
+            <div class="carousel-item">
+                <img src="<?php echo esc_url($image5); ?>" alt="Image 5">
+            </div>
+        <?php endif; ?>
+        <?php if ($image6) : ?>
+            <div class="carousel-item">
+                <img src="<?php echo esc_url($image6); ?>" alt="Image 6">
+            </div>
+        <?php endif; ?>
+        <?php if ($image7) : ?>
+            <div class="carousel-item">
+                <img src="<?php echo esc_url($image7); ?>" alt="Image 7">
+            </div>
+        <?php endif; ?>
+        <?php if ($image8) : ?>
+            <div class="carousel-item">
+                <img src="<?php echo esc_url($image8); ?>" alt="Image 8">
+            </div>
+        <?php endif; ?>
+        <?php if ($image9) : ?>
+            <div class="carousel-item">
+                <img src="<?php echo esc_url($image9); ?>" alt="Image 9">
+            </div>
+        <?php endif; ?>
+        <?php if ($image10) : ?>
+            <div class="carousel-item">
+                <img src="<?php echo esc_url($image10); ?>" alt="Image 10">
+            </div>
+        <?php endif; ?>
     </div>
                 <!-- Flèches -->
                 <button class="carousel-arrow carousel-arrow-left">
@@ -60,6 +96,12 @@ get_header();
                     <?php if ($image2) : ?><button class="dot"></button><?php endif; ?>
                     <?php if ($image3) : ?><button class="dot"></button><?php endif; ?>
                     <?php if ($image4) : ?><button class="dot"></button><?php endif; ?>
+                    <?php if ($image5) : ?><button class="dot"></button><?php endif; ?>
+                    <?php if ($image6) : ?><button class="dot"></button><?php endif; ?>
+                    <?php if ($image7) : ?><button class="dot"></button><?php endif; ?>
+                    <?php if ($image8) : ?><button class="dot"></button><?php endif; ?>
+                    <?php if ($image9) : ?><button class="dot"></button><?php endif; ?>
+                    <?php if ($image10) : ?><button class="dot"></button><?php endif; ?>
                 </div>
             </div>
 
